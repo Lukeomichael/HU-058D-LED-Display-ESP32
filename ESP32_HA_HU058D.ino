@@ -442,15 +442,15 @@ void checkButtonForReset() {
   static unsigned long button_press_start_time = 0;
   static bool was_pressed = false;
 
-  if (digitalRead(TRIGGER_PIN) == LOW) {
+  if (digitalRead(TRIGGER_PIN) == LOW || digitalRead(TOP_BUTTON) == LOW) {
     if (!was_pressed) {
       button_press_start_time = millis();
       was_pressed = true;
       Serial.println("BOOT button pressed. Keep holding to reset Wi-Fi configuration...");
     }
 
-    if (millis() - button_press_start_time >= 3000) {
-      Serial.println("\n[RESET] Button held for 3 seconds! Clearing network cache and restarting...");
+    if (millis() - button_press_start_time >= 10000) {
+      Serial.println("\n[RESET] Button held for 10 seconds! Clearing network cache and restarting...");
       wm.resetSettings();
       delay(1000);
       ESP.restart();
@@ -1609,8 +1609,7 @@ void setup() {
 }
 
 void loop() {
-  //checkButtonForReset();
-  checkTopButtonForAP(); 
+  checkButtonForReset();
 
   if (!mqttClient.connected()) {
     reconnectMQTT();
