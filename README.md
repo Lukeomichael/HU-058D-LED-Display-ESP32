@@ -8,10 +8,12 @@ This is forked from https://github.com/misterblack1/HU-058_ESPHome.
 
 Hardware modifications include powering the buzzer off 3V3 and using a Wemos D1 ESP32 module to minimise space.
 The Access point is triggered if you keep the top button pressed for 10 seconds.
+
 ![Config Home](images/AP%20Wifi.jpeg)
 ![Config Home](images/Config_home.jpeg)
 
 As I am in Australia, I have provided a drop down for Australian Timezones. You will need to make changes if you are in a different country.
+
 ![Config Home](images/Config_set.jpeg)
 
 With the LED clock connected to MQTT, HA will discover the device and present you with additional options.
