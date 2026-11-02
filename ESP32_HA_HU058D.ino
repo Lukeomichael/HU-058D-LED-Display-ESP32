@@ -465,43 +465,7 @@ void checkButtonForReset() {
       Serial.println("*****************************************");
     }
   }
-}
-
-void checkTopButtonForAP() {
-  static unsigned long topButtonPressStart = 0;
-  static bool topWasHeld = false;
-
-  if (digitalRead(TOP_BUTTON) == LOW) {
-    if (!topWasHeld) {
-      topButtonPressStart = millis();
-      topWasHeld = true;
-      Serial.println("TOP button held. Keep holding 10 s to enter AP mode...");
-    }
-    if (millis() - topButtonPressStart >= 10000) {
-      Serial.println("\n[AP] TOP button held 10 s! Entering AP mode...");
-      topButtonPressStart = 0;
-      topWasHeld = false;
-
-      mqttClient.disconnect();
-      WiFi.disconnect();
-      delay(500);
-
-      // Blocks until the portal is saved or times out.
-      // If new credentials are saved, it attempts to connect.
-      wm.startConfigPortal(AP_SSID);
-
-      Serial.println("AP portal finished. Resuming normal operation.");
-    }
-  } else {
-    if (topWasHeld) {
-      if (millis() - topButtonPressStart < 10000) {
-        Serial.println("TOP button released early. AP mode cancelled.");
-      }
-      topWasHeld = false;
-      topButtonPressStart = 0;
-    }
-  }
-}   
+}  
 
 void publishTimerState() {
   if (!mqttClient.connected()) return;
