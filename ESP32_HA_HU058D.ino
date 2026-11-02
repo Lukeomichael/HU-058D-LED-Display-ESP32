@@ -319,41 +319,6 @@ static void setDecimalPoint(uint8_t r, uint8_t g, uint8_t b) {
   setPos(1, SEG_ANNUN, r, g, b);
 }
 
-// Collapse the level array into sub-frames.
-// static void render() {
-//   for (int d = 0; d < 2; d++) {
-//     for (int ci = 0; ci < 4; ci++) {
-//       uint16_t full = 0, half = 0;
-//       bool needsHalf = false;
-//       for (int led = 1; led <= 5; led++) {
-//         int base = 3 * led - 2;
-//         for (int ch = 0; ch < 3; ch++) {
-//           uint8_t lv = g_level[d][ci][led][ch];
-//           if (lv == 0) continue;
-//           uint16_t bit = 1u << (base + ch);
-//           half |= bit;
-//           if (lv >= 2) full |= bit;
-//           if (lv == 1) needsHalf = true;
-//         }
-//       }
-//       if (g_seg0) {
-//         half |= 1;
-//         full |= 1;
-//       }
-//       noInterrupts();
-//       if (needsHalf) {
-//         g_ss[d][ci][0] = half;
-//         g_ss[d][ci][1] = full;
-//         g_nsub[d][ci] = 2;
-//       } else {
-//         g_ss[d][ci][0] = half;
-//         g_nsub[d][ci] = 1;
-//       }
-//       interrupts();
-//     }
-//   }
-// }
-
 static void render() {
   uint16_t ss[2][4][2];
   uint8_t  nsub[2][4];
