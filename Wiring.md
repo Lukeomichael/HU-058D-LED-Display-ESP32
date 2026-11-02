@@ -7,3 +7,5 @@ The wiring is based on https://github.com/misterblack1/HU-058_ESPHome/blob/main/
 ![Config Home](images/wiring2.jpeg)
 
 For programming, use the USB on the ESP32, but once ready, the 5V power comes from the wires soldered from the USB port
+
+For pinouts on the ESP32 D1 Mini, see https://github.com/r0oland/ESP32_mini_KiCad_Library
