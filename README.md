@@ -9,7 +9,7 @@ If you have Home assistant, you just need to set up  your MQTT Broker and connec
 This is forked from https://github.com/misterblack1/HU-058_ESPHome.
 
 Hardware modifications include powering the buzzer off 3V3 and using a Wemos D1 ESP32 module to minimise space.
-The Access point is triggered if you keep the top button pressed for 10 seconds.
+The Access point is triggered if you keep the reset or top button pressed for 10 seconds.
 
 ![Config Home](images/AP%20Wifi.jpeg)
 ![Config Home](images/Config_home.jpeg)
