@@ -1,5 +1,7 @@
 # HU-058D-LED-Display-ESP32
 This project uses a kit available from AliExpress for cheap. It is modified to include an ESP32 Module, turning it into a network clock that is always synced.
+![Config Home](images/Clock_Front.jpeg)
+
 The HU-058D LED Display can be used standalone or with HomeAssistant to control enhanced features. The idea is that if you don't have Home Assistant, you can still have a clock that syncs to Network time. 
 In addition, by pressing the Top button, you will change to Timer - This is a count up timer that can be started and stopped by pressing the bottom button. Press and hold the bottom button to reset the timer.
 If you have Home assistant, you just need to set up  your MQTT Broker and connect to it as part of the initial AP configuration.
