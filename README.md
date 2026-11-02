@@ -24,7 +24,7 @@ With the LED clock connected to MQTT, HA will discover the device and present yo
 * You can show a Count Up timer
 * You can set the count up Timer value, and a buzzer will sound when it is reached
 * You can start and stop the timer
-* 
+
 ![Config Home](images/HA_MQTT_Device%20info.jpeg)
 ![Config Home](images/Change%20Color.jpeg)
 
